@@ -5,14 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d450817-ddb5-4892-a5ed-5a601debdda2" name="Lista de cambios predeterminada" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Conversor.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Moneda.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/google_code_gson.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/gson_2_10_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/okhttp_3_9_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/okio_1_8_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/squareup_okhttp3_okhttp.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/squareup_okio.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/annotations-13.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/gson-2.10.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/kotlin-stdlib-1.6.20.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/kotlin-stdlib-1.8.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/kotlin-stdlib-common-1.6.20.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/kotlin-stdlib-common-1.8.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/kotlin-stdlib-jdk7-1.6.20.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/kotlin-stdlib-jdk7-1.8.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/kotlin-stdlib-jdk8-1.6.20.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/kotlin-stdlib-jdk8-1.8.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/okhttp-4.11.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/okio-3.2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/okio-3.4.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/okio-jvm-3.2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/okio-jvm-3.4.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Divisas.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ObtenerDivisas.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Conversor.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Conversor.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Moneda.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,11 +60,30 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Downloaded.Files.Path.Enabled": "true",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/new-hp/IdeaProjects/ByteBankHeredado",
-    "onboarding.tips.debug.path": "C:/Users/new-hp/IdeaProjects/Ejercicios/Conversor/src/Main.java"
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "jdk.selected.JAVA_MODULE": "20",
+    "last_opened_file_path": "C:/Program Files/Maven",
+    "onboarding.tips.debug.path": "C:/Users/new-hp/IdeaProjects/Ejercicios/Conversor/src/Main.java",
+    "project.structure.last.edited": "Módulos",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.1150748",
+    "settings.editor.selected.configurable": "project.propCompiler"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\new-hp\IdeaProjects\Ejercicios\Conversor\lib" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\new-hp\IdeaProjects\Ejercicios\Conversor\lib" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="애플리케이션 수준" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Tarea por defecto">
@@ -54,5 +94,29 @@
       <updated>1689254345468</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NoClassDefFoundError" package="java.lang" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
