@@ -5,35 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d450817-ddb5-4892-a5ed-5a601debdda2" name="Lista de cambios predeterminada" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/google_code_gson.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/gson_2_10_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/okhttp_3_9_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/okio_1_8_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/squareup_okhttp3_okhttp.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/squareup_okio.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/annotations-13.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/gson-2.10.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/kotlin-stdlib-1.6.20.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/kotlin-stdlib-1.8.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/kotlin-stdlib-common-1.6.20.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/kotlin-stdlib-common-1.8.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/kotlin-stdlib-jdk7-1.6.20.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/kotlin-stdlib-jdk7-1.8.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/kotlin-stdlib-jdk8-1.6.20.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/kotlin-stdlib-jdk8-1.8.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/okhttp-4.11.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/okio-3.2.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/okio-3.4.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/okio-jvm-3.2.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/okio-jvm-3.4.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Divisas.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ObtenerDivisas.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Colores.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ConversionResultado.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/FromUnit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ObtenerOpcionesGeneric.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ObtenerTipoConversiones.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/OperacionConversorDeUnidades.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ToUnit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/VentanaConversorDeDivisas.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/VentanaConversorDeUnidades.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/VentanaElegirAreaDeConversion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/VentanaInicial.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/img/divisa.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/img/unidades.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Conversor.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Conversor.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Moneda.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ObtenerDivisas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ObtenerDivisas.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,8 +54,9 @@
     "Repository.Attach.Sources": "false",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "20",
-    "last_opened_file_path": "C:/Program Files/Maven",
+    "last_opened_file_path": "C:/Users/new-hp/IdeaProjects/Ejercicios/Aplicaciones-Graficas-01",
     "onboarding.tips.debug.path": "C:/Users/new-hp/IdeaProjects/Ejercicios/Conversor/src/Main.java",
     "project.structure.last.edited": "Módulos",
     "project.structure.proportion": "0.15",

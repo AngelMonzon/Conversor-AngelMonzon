@@ -6,6 +6,7 @@ import okhttp3.Response;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.sql.SQLOutput;
 
 public class ObtenerDivisas {
     private static final String API_KEY = "bff747ccfeddc6e5d586efb71794b508";
@@ -36,14 +37,14 @@ public class ObtenerDivisas {
         return divisas.rates.get(moneda);
     }
 
-    public BigDecimal compararMonedas(BigDecimal cantidad, BigDecimal valorOrigen, BigDecimal valorDestino){
-        return cantidad.divide(valorOrigen, RoundingMode.HALF_UP).multiply(valorDestino);
-    }
+    public BigDecimal compararMonedas(BigDecimal cantidad, String valorOrigen, String valorDestino){
+        BigDecimal tasaOrigenABase = divisas.rates.get(valorOrigen);
+        BigDecimal tasaDestinoABase = divisas.rates.get(valorDestino);
 
-    public static void main(String[] args) throws IOException {
-        ObtenerDivisas obtenerDivisas = new ObtenerDivisas();
+        //conversion
+        BigDecimal cantidadBase = cantidad.divide(tasaOrigenABase, 2, RoundingMode.HALF_UP);
+        BigDecimal cantidadConvertida = cantidadBase.multiply(tasaDestinoABase);
 
-        System.out.println(obtenerDivisas.compararMonedas(new BigDecimal(),obtenerDivisas.obtenerValor("MXN"), obtenerDivisas.obtenerValor("USD") ));
+        return cantidadConvertida.setScale(2, RoundingMode.HALF_UP);
     }
 }
-
