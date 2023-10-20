@@ -19,7 +19,7 @@ public class VentanaInicial extends JFrame {
 
         // Creación de los componentes
         JLabel lblTitulo = new JLabel("Elija el tipo de conversor:");
-        lblTitulo.setForeground(Colores.COLOR_DE_FONDO);
+        lblTitulo.setForeground(Colores.COLOR_DE_LETRAS);
 
         String[] opciones = {"Conversor de Divisas", "Conversor de Medidas"};
         comboBox = new JComboBox<>(opciones);

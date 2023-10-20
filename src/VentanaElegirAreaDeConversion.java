@@ -16,7 +16,7 @@ public class VentanaElegirAreaDeConversion extends JFrame {
         setLocationRelativeTo(null);
         ImageIcon icono = new ImageIcon("src/img/unidades.png");
         setIconImage(icono.getImage());
-        getContentPane().setBackground(Colores.COLOR_DE_LETRAS);
+        getContentPane().setBackground(Colores.COLOR_DE_FONDO);
 
         // Creación de los componentes
         JLabel lblTitulo = new JLabel("Que decea convertir?");

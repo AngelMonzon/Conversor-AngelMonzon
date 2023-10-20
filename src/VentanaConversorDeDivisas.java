@@ -1,11 +1,16 @@
 import javax.swing.*;
+import javax.swing.text.DefaultCaret;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.text.AbstractDocument;
+import javax.swing.text.Document;
 
 public class VentanaConversorDeDivisas extends JFrame {
     private JLabel lblResultado;
@@ -13,7 +18,7 @@ public class VentanaConversorDeDivisas extends JFrame {
     private JComboBox<String> cbMonedaOrigen, cbMonedaDestino;
     private JButton btnConvertir;
 
-    public VentanaConversorDeDivisas() throws IOException {
+    public <txtMonto> VentanaConversorDeDivisas() throws IOException {
         // Configuración de la ventana
         setTitle("Conversor de Divisas");
         setSize(300, 200);
@@ -45,10 +50,21 @@ public class VentanaConversorDeDivisas extends JFrame {
         lblResultado.setForeground(Colores.COLOR_DE_LETRAS);
         lblResultado.setPreferredSize(tamanoComponentes);
 
-        txtMonto = new JTextField(10);
+        txtMonto =  new JTextField(10);
         txtMonto.setBackground(Colores.COLOR_DE_FONDO);
         txtMonto.setForeground(Colores.COLOR_DE_LETRAS);
         txtMonto.setPreferredSize(tamanoComponentes);
+        txtMonto.setHorizontalAlignment(SwingConstants.RIGHT);
+        Document document = txtMonto.getDocument();
+        ((AbstractDocument) document).setDocumentFilter(FiltroDeCaracteresNumericos.FILTRO_NUMERICO);
+        final String[] previousText = {txtMonto.getText()};
+        txtMonto.getDocument().addDocumentListener(new VerificarPuntoDecimal(previousText));
+        txtMonto.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyReleased(KeyEvent e) {
+                previousText[0] = txtMonto.getText();
+            }
+        });
 
         cbMonedaOrigen = new JComboBox<>(divisasOrigen);
         cbMonedaOrigen.setPreferredSize(tamanoComponentes);

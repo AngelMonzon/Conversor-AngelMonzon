@@ -1,4 +1,6 @@
 import javax.swing.*;
+import javax.swing.text.AbstractDocument;
+import javax.swing.text.Document;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -36,6 +38,8 @@ public class VentanaConversorDeUnidades extends JFrame {
         txtValor = new JTextField(10);
         txtValor.setForeground(Colores.COLOR_DE_LETRAS);
         txtValor.setBackground(Colores.COLOR_DE_FONDO);
+        Document document = txtValor.getDocument();
+        ((AbstractDocument) document).setDocumentFilter(FiltroDeCaracteresNumericos.FILTRO_NUMERICO);
 
         //Obtener opciones de el area seleccionada
         ObtenerOpcionesGeneric obtenerOpcionesGeneric = new ObtenerOpcionesGeneric();
