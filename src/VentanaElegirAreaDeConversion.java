@@ -12,7 +12,7 @@ public class VentanaElegirAreaDeConversion extends JFrame {
         // Configuración de la ventana
         setTitle("Ventana de Inicio");
         setSize(500, 500);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
         ImageIcon icono = new ImageIcon("src/img/unidades.png");
         setIconImage(icono.getImage());
@@ -23,8 +23,8 @@ public class VentanaElegirAreaDeConversion extends JFrame {
         lblTitulo.setForeground(Colores.COLOR_DE_LETRAS);
 
         //Obtencion de la lista del conversor de unidades
-        ObtenerTipoConversiones obtenerTipoConversiones = new ObtenerTipoConversiones();
-        List<String> listaUnidades = obtenerTipoConversiones.listaTiposConversion;
+        ObtenerTipoConverUnid obtenerTipoConverUnid = new ObtenerTipoConverUnid();
+        List<String> listaUnidades = obtenerTipoConverUnid.listaTiposConversion;
 
         DefaultComboBoxModel<String> comboBoxModel = new DefaultComboBoxModel<>(listaUnidades.toArray(new String[0]));
         comboBox = new JComboBox<>(comboBoxModel);
@@ -70,7 +70,7 @@ public class VentanaElegirAreaDeConversion extends JFrame {
 
         VentanaConversorDeUnidades ventanaUnidades = new VentanaConversorDeUnidades(seleccion);
         ventanaUnidades.setVisible(true);
-
+        this.dispose();
     }
 }
 

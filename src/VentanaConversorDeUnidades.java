@@ -2,8 +2,7 @@ import javax.swing.*;
 import javax.swing.text.AbstractDocument;
 import javax.swing.text.Document;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 import java.io.IOException;
 import java.util.List;
 
@@ -21,6 +20,8 @@ public class VentanaConversorDeUnidades extends JFrame {
         setSize(300, 200);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
+        ImageIcon icono = new ImageIcon("src/img/unidades.png");
+        setIconImage(icono.getImage());
 
         // Creación de los componentes
         JLabel lblValor = new JLabel("Valor:");
@@ -32,14 +33,25 @@ public class VentanaConversorDeUnidades extends JFrame {
         JLabel lblMedidaDestino = new JLabel("Medida Destino:");
         lblMedidaDestino.setForeground(Colores.COLOR_DE_LETRAS);
 
-        lblResultado = new JLabel("Resultado: ");
+        lblResultado = new JLabel("0.00");
         lblResultado.setForeground(Colores.COLOR_DE_LETRAS);
+        lblResultado.setHorizontalAlignment(SwingConstants.RIGHT);
 
         txtValor = new JTextField(10);
-        txtValor.setForeground(Colores.COLOR_DE_LETRAS);
-        txtValor.setBackground(Colores.COLOR_DE_FONDO);
+        txtValor.setForeground(Colores.COLOR_DE_LETRA_JTextField);
+        txtValor.setBackground(Colores.COLOR_DE_JTextField);
+        txtValor.setHorizontalAlignment(SwingConstants.RIGHT);
         Document document = txtValor.getDocument();
         ((AbstractDocument) document).setDocumentFilter(FiltroDeCaracteresNumericos.FILTRO_NUMERICO);
+        final String[] previousText = {txtValor.getText()};
+        txtValor.getDocument().addDocumentListener(new VerificarPuntoDecimal(previousText));
+        txtValor.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyReleased(KeyEvent e) {
+                previousText[0] = txtValor.getText();
+            }
+        });
+
 
         //Obtener opciones de el area seleccionada
         ObtenerOpcionesGeneric obtenerOpcionesGeneric = new ObtenerOpcionesGeneric();
@@ -80,6 +92,14 @@ public class VentanaConversorDeUnidades extends JFrame {
                 convertirMedidas();
             }
         });
+
+        this.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                VentanaInicial ventanaInicial = new VentanaInicial();
+                ventanaInicial.setVisible(true);
+            }
+        });
     }
 
     private void convertirMedidas() {
@@ -95,10 +115,9 @@ public class VentanaConversorDeUnidades extends JFrame {
             double resultado;
             OperacionConversorDeUnidades operacionConversorDeUnidades = new OperacionConversorDeUnidades();
             resultado = operacionConversorDeUnidades.convertir(unit, valor, medidaOrigen, medidaDestino);
-            System.out.println(resultado);
 
             // Mostrar el resultado en la etiqueta
-            lblResultado.setText("Resultado: " + resultado + " " + medidaDestino);
+            lblResultado.setText(resultado + " " + medidaDestino);
         } catch (NumberFormatException ex) {
             lblResultado.setText("Error: Ingrese un valor válido");
         } catch (IOException e) {

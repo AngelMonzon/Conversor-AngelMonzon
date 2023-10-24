@@ -32,7 +32,7 @@ public class OperacionConversorDeUnidades {
 
         // Usamos Gson para deserializar el JSON a un objeto Java
         Gson gson = new GsonBuilder().create();
-        ConversionResultado conversionResultado = gson.fromJson(responseBody, ConversionResultado.class);
+        ConversionUnidadesResultado conversionResultado = gson.fromJson(responseBody, ConversionUnidadesResultado.class);
 
         System.out.println(conversionResultado.getValue());
         return conversionResultado.getValue();

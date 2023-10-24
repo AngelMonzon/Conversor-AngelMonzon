@@ -1,14 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Conversor:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d450817-ddb5-4892-a5ed-5a601debdda2" name="Lista de cambios predeterminada" comment="">
-      <change afterPath="$PROJECT_DIR$/src/FiltroDeCaracteresNumericos.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PruebaPunto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/VerificarPuntoDecimal.java" afterDir="false" />
+    <list default="true" id="9d450817-ddb5-4892-a5ed-5a601debdda2" name="Lista de cambios predeterminada" comment="Lista de cambios predeterminada">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Conversor_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DivisasEnEspanol.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/img/engranajes.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Colores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Colores.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ConversionResultado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ConversionUnidadesResultado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ObtenerDivisas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ObtenerDivisas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ObtenerTipoConversiones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ObtenerTipoConverUnid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OperacionConversorDeUnidades.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OperacionConversorDeUnidades.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PruebaPunto.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/VentanaConversorDeDivisas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VentanaConversorDeDivisas.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/VentanaConversorDeUnidades.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VentanaConversorDeUnidades.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/VentanaElegirAreaDeConversion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VentanaElegirAreaDeConversion.java" afterDir="false" />
@@ -19,6 +32,9 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -28,6 +44,10 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="sortByName" value="true" />
   </component>
   <component name="ProjectId" id="2SWFHzDFODvKBywZVXqoLlisnwW" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -48,12 +68,12 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;20&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/new-hp/IdeaProjects/Ejercicios/Aplicaciones-Graficas-01&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/new-hp/IdeaProjects/Ejercicios/Conversor/src/img/divisa.png&quot;,
     &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/new-hp/IdeaProjects/Ejercicios/Conversor/src/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Módulos&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.1150748&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.javacompiler&quot;
   }
 }</component>
   <component name="RecentsManager">

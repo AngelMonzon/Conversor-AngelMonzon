@@ -13,7 +13,7 @@ public class VentanaInicial extends JFrame {
         setSize(500, 500);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
-        ImageIcon icono = new ImageIcon("src/img/divisa.png");
+        ImageIcon icono = new ImageIcon("src/img/engranajes.png");
         setIconImage(icono.getImage());
         getContentPane().setBackground(Colores.COLOR_DE_FONDO);
 
@@ -69,6 +69,7 @@ public class VentanaInicial extends JFrame {
             VentanaElegirAreaDeConversion ventanaElegirAreaDeConversion = new VentanaElegirAreaDeConversion();
             ventanaElegirAreaDeConversion.setVisible(true);
         }
+        this.dispose();
     }
 }
 

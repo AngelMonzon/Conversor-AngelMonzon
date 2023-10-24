@@ -1,4 +1,4 @@
-public class ConversionResultado {
+public class ConversionUnidadesResultado {
     private String measure;
     public FromUnit from;
     public ToUnit to;

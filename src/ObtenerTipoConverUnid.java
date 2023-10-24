@@ -8,9 +8,9 @@ import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.List;
 
-public class ObtenerTipoConversiones {
+public class ObtenerTipoConverUnid {
     List<String> listaTiposConversion;
-    public ObtenerTipoConversiones() throws IOException {
+    public ObtenerTipoConverUnid() throws IOException {
         OkHttpClient client = new OkHttpClient();
 
         Request request = new Request.Builder()

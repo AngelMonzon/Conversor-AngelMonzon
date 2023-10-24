@@ -1,10 +1,6 @@
 import javax.swing.*;
-import javax.swing.text.DefaultCaret;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
+import java.awt.event.*;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -13,12 +9,13 @@ import javax.swing.text.AbstractDocument;
 import javax.swing.text.Document;
 
 public class VentanaConversorDeDivisas extends JFrame {
-    private JLabel lblResultado;
-    private JTextField txtMonto;
-    private JComboBox<String> cbMonedaOrigen, cbMonedaDestino;
-    private JButton btnConvertir;
+    private final JLabel lblResultado;
+    private final JTextField txtMonto;
+    private final JComboBox<String> cbMonedaOrigen, cbMonedaDestino;
 
-    public <txtMonto> VentanaConversorDeDivisas() throws IOException {
+    List<String> divisas;
+
+    public VentanaConversorDeDivisas() {
         // Configuración de la ventana
         setTitle("Conversor de Divisas");
         setSize(300, 200);
@@ -28,10 +25,14 @@ public class VentanaConversorDeDivisas extends JFrame {
         setIconImage(icono.getImage());
 
         //Obtener la lista de todas las divisas
-        ObtenerDivisas obtenerDivisas = new ObtenerDivisas();
-        List<String> keys = new ArrayList<>(obtenerDivisas.divisas.rates.keySet());
-        DefaultComboBoxModel<String> divisasOrigen = new DefaultComboBoxModel<>(keys.toArray(new String[0]));
-        DefaultComboBoxModel<String> divisasDestino = new DefaultComboBoxModel<>(keys.toArray(new String[0]));
+        //ObtenerDivisas obtenerDivisas = new ObtenerDivisas();
+        DivisasEnEspanol divisasEnEspanol = new DivisasEnEspanol();
+        List<String> keys = new ArrayList<>(divisasEnEspanol.diccionario.keySet());
+        //Divisas en espanol
+        DefaultComboBoxModel<String> divisasCBModelOrigen = new DefaultComboBoxModel<>(keys.toArray(new String[0]));
+        DefaultComboBoxModel<String> divisasCBModelDestino = new DefaultComboBoxModel<>(keys.toArray(new String[0]));
+
+        this.divisas = keys;
 
 
         // Creación de los componentes
@@ -46,13 +47,14 @@ public class VentanaConversorDeDivisas extends JFrame {
         JLabel lblMonedaDestino = new JLabel("Moneda Destino:");
         lblMonedaDestino.setForeground(Colores.COLOR_DE_LETRAS);
 
-        lblResultado = new JLabel("Resultado: ");
+        lblResultado = new JLabel("0.00");
         lblResultado.setForeground(Colores.COLOR_DE_LETRAS);
         lblResultado.setPreferredSize(tamanoComponentes);
+        lblResultado.setHorizontalAlignment(SwingConstants.RIGHT);
 
         txtMonto =  new JTextField(10);
-        txtMonto.setBackground(Colores.COLOR_DE_FONDO);
-        txtMonto.setForeground(Colores.COLOR_DE_LETRAS);
+        txtMonto.setBackground(Colores.COLOR_DE_JTextField);
+        txtMonto.setForeground(Colores.COLOR_DE_LETRA_JTextField);
         txtMonto.setPreferredSize(tamanoComponentes);
         txtMonto.setHorizontalAlignment(SwingConstants.RIGHT);
         Document document = txtMonto.getDocument();
@@ -65,14 +67,15 @@ public class VentanaConversorDeDivisas extends JFrame {
                 previousText[0] = txtMonto.getText();
             }
         });
+        txtMonto.addActionListener(e -> convertirDivisas());
 
-        cbMonedaOrigen = new JComboBox<>(divisasOrigen);
+        cbMonedaOrigen = new JComboBox<>(divisasCBModelOrigen);
         cbMonedaOrigen.setPreferredSize(tamanoComponentes);
 
-        cbMonedaDestino = new JComboBox<>(divisasDestino);
+        cbMonedaDestino = new JComboBox<>(divisasCBModelDestino);
         cbMonedaDestino.setPreferredSize(tamanoComponentes);
 
-        btnConvertir = new JButton("Convertir");
+        JButton btnConvertir = new JButton("Convertir");
 
         // Configuración del panel
         JPanel panel = new JPanel();
@@ -120,10 +123,13 @@ public class VentanaConversorDeDivisas extends JFrame {
         pack();
 
         // Agregar acción al botón "Convertir"
-        btnConvertir.addActionListener(new ActionListener() {
+        btnConvertir.addActionListener(e -> convertirDivisas());
+
+        this.addWindowListener(new WindowAdapter() {
             @Override
-            public void actionPerformed(ActionEvent e) {
-                convertirDivisas();
+            public void windowClosing(WindowEvent e) {
+                VentanaInicial ventanaInicial = new VentanaInicial();
+                ventanaInicial.setVisible(true);
             }
         });
     }
@@ -134,15 +140,17 @@ public class VentanaConversorDeDivisas extends JFrame {
             BigDecimal monto = new BigDecimal(txtMonto.getText());
 
             // Obtener la moneda de origen y destino seleccionadas
-            String monedaOrigen = (String) cbMonedaOrigen.getSelectedItem();
-            String monedaDestino = (String) cbMonedaDestino.getSelectedItem();
+            DivisasEnEspanol divisasEnEspanol = new DivisasEnEspanol();
+
+            String monedaOrigen = divisasEnEspanol.diccionario.get(cbMonedaOrigen.getSelectedItem());
+            String monedaDestino = divisasEnEspanol.diccionario.get(cbMonedaDestino.getSelectedItem());
 
             //Conversion
             ObtenerDivisas obtenerDivisas = new ObtenerDivisas();
             BigDecimal resultado = obtenerDivisas.compararMonedas(monto,monedaOrigen, monedaDestino);
 
             // Mostrar el resultado en la etiqueta
-            lblResultado.setText("Resultado: " + resultado + " " + monedaDestino);
+            lblResultado.setText(resultado + " " + monedaDestino);
         } catch (NumberFormatException | IOException ex) {
             lblResultado.setText("Error: Ingrese un monto válido");
         }
