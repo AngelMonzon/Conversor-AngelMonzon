@@ -12,8 +12,8 @@ public class VentanaConversorDeDivisas extends JFrame {
     private final JLabel lblResultado;
     private final JTextField txtMonto;
     private final JComboBox<String> cbMonedaOrigen, cbMonedaDestino;
+    private final JComboBox<String> cbCambioDeidioma;
 
-    List<String> divisas;
 
     public VentanaConversorDeDivisas() {
         // Configuración de la ventana
@@ -27,12 +27,17 @@ public class VentanaConversorDeDivisas extends JFrame {
         //Obtener la lista de todas las divisas
         //ObtenerDivisas obtenerDivisas = new ObtenerDivisas();
         DivisasEnEspanol divisasEnEspanol = new DivisasEnEspanol();
-        List<String> keys = new ArrayList<>(divisasEnEspanol.diccionario.keySet());
-        //Divisas en espanol
-        DefaultComboBoxModel<String> divisasCBModelOrigen = new DefaultComboBoxModel<>(keys.toArray(new String[0]));
-        DefaultComboBoxModel<String> divisasCBModelDestino = new DefaultComboBoxModel<>(keys.toArray(new String[0]));
+        DivisasEnIngles divisasEnIngles = new DivisasEnIngles();
+        List<String> keysEspanol = new ArrayList<>(divisasEnEspanol.diccionario.keySet());
+        List<String> keysIngles = new ArrayList<>(divisasEnIngles.diccionario.keySet());
 
-        this.divisas = keys;
+        //Divisas en espanol
+        DefaultComboBoxModel<String> divisasCBModelOrigenEspanol = new DefaultComboBoxModel<>(keysEspanol.toArray(new String[0]));
+        DefaultComboBoxModel<String> divisasCBModelDestinoEspanol = new DefaultComboBoxModel<>(keysEspanol.toArray(new String[0]));
+
+        //Divisas en ingles
+        DefaultComboBoxModel<String> divisasCBModelOrigenIngles = new DefaultComboBoxModel<>(keysIngles.toArray(new String[0]));
+        DefaultComboBoxModel<String> divisasCBModelDestinoIngles = new DefaultComboBoxModel<>(keysIngles.toArray(new String[0]));
 
 
         // Creación de los componentes
@@ -47,12 +52,14 @@ public class VentanaConversorDeDivisas extends JFrame {
         JLabel lblMonedaDestino = new JLabel("Moneda Destino:");
         lblMonedaDestino.setForeground(Colores.COLOR_DE_LETRAS);
 
+        //JLabel donde se mostrara el resultado
         lblResultado = new JLabel("0.00");
         lblResultado.setForeground(Colores.COLOR_DE_LETRAS);
         lblResultado.setPreferredSize(tamanoComponentes);
         lblResultado.setHorizontalAlignment(SwingConstants.RIGHT);
 
-        txtMonto =  new JTextField(10);
+        //JtextField para ingresar monto a convertir
+        txtMonto =  new JTextField("1",10 );
         txtMonto.setBackground(Colores.COLOR_DE_JTextField);
         txtMonto.setForeground(Colores.COLOR_DE_LETRA_JTextField);
         txtMonto.setPreferredSize(tamanoComponentes);
@@ -69,13 +76,61 @@ public class VentanaConversorDeDivisas extends JFrame {
         });
         txtMonto.addActionListener(e -> convertirDivisas());
 
-        cbMonedaOrigen = new JComboBox<>(divisasCBModelOrigen);
+        //ComboBox para el cambio de idioma
+        String[] opciones = {"Español", "Ingles"};
+        cbCambioDeidioma = new JComboBox<>(opciones);
+
+        //Anadir accion a combobox de cambio de idioma
+        cbCambioDeidioma.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (cbCambioDeidioma.getSelectedItem() == "Español"){
+                    cbMonedaOrigen.setModel(divisasCBModelOrigenEspanol);
+                    cbMonedaDestino.setModel(divisasCBModelDestinoEspanol);
+                    cbMonedaOrigen.setSelectedItem("Dólar estadounidense (USD)");
+                    cbMonedaDestino.setSelectedItem("Peso mexicano (MXN)");
+                } else if (cbCambioDeidioma.getSelectedItem() == "Ingles") {
+                    cbMonedaOrigen.setModel(divisasCBModelOrigenIngles);
+                    cbMonedaDestino.setModel(divisasCBModelDestinoIngles);
+                    cbMonedaOrigen.setSelectedItem("United States Dollar (USD)");
+                    cbMonedaDestino.setSelectedItem("Mexican Peso (MXN)");
+
+                } else {
+                    System.out.println("error");
+                }
+            }
+        });
+
+        //Boton para alternar las monedas
+        ImageIcon iconoAlternar = new ImageIcon("src/img/sincronizacion.png");
+        JButton btnAlternar = new JButton(iconoAlternar);
+        btnAlternar.setPreferredSize(new Dimension(30, 30));
+
+        btnAlternar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String origenSeleccion = (String) cbMonedaOrigen.getSelectedItem();
+                String destinoSeleccion = (String) cbMonedaDestino.getSelectedItem();
+                cbMonedaDestino.setSelectedItem(origenSeleccion);
+                cbMonedaOrigen.setSelectedItem(destinoSeleccion);
+                convertirDivisas();
+            }
+        });
+
+        //Combobox para seleccionar moneda origen
+        cbMonedaOrigen = new JComboBox<>(divisasCBModelOrigenEspanol);
         cbMonedaOrigen.setPreferredSize(tamanoComponentes);
+        cbMonedaOrigen.setSelectedItem("Dólar estadounidense (USD)");
 
-        cbMonedaDestino = new JComboBox<>(divisasCBModelDestino);
+        //Combobox para seleccionar moneda destino
+        cbMonedaDestino = new JComboBox<>(divisasCBModelDestinoEspanol);
         cbMonedaDestino.setPreferredSize(tamanoComponentes);
+        cbMonedaDestino.setSelectedItem("Peso mexicano (MXN)");
 
+        //Boton para realizar la conversion
         JButton btnConvertir = new JButton("Convertir");
+        // Agregar acción al botón "Convertir"
+        btnConvertir.addActionListener(e -> convertirDivisas());
 
         // Configuración del panel
         JPanel panel = new JPanel();
@@ -87,34 +142,43 @@ public class VentanaConversorDeDivisas extends JFrame {
 
         constraints.gridx = 0;
         constraints.gridy = 0;
+        panel.add(cbCambioDeidioma, constraints);
+
+        constraints.gridx = 0;
+        constraints.gridy = 1;
         panel.add(lblMonto, constraints);
 
         constraints.gridx = 1;
-        constraints.gridy = 0;
+        constraints.gridy = 1;
         panel.add(txtMonto, constraints);
 
+
         constraints.gridx = 0;
-        constraints.gridy = 1;
+        constraints.gridy = 2;
         panel.add(lblMonedaOrigen, constraints);
 
         constraints.gridx = 1;
-        constraints.gridy = 1;
+        constraints.gridy = 2;
         panel.add(cbMonedaOrigen, constraints);
 
+        constraints.gridx = 1;
+        constraints.gridy = 3;
+        panel.add(btnAlternar, constraints);
+
         constraints.gridx = 0;
-        constraints.gridy = 2;
+        constraints.gridy = 4;
         panel.add(lblMonedaDestino, constraints);
 
         constraints.gridx = 1;
-        constraints.gridy = 2;
+        constraints.gridy = 4;
         panel.add(cbMonedaDestino, constraints);
 
         constraints.gridx = 0;
-        constraints.gridy = 3;
+        constraints.gridy = 5;
         panel.add(btnConvertir, constraints);
 
         constraints.gridx = 1;
-        constraints.gridy = 3;
+        constraints.gridy = 5;
         panel.add(lblResultado, constraints);
 
         // Agregar el panel a la ventana
@@ -122,8 +186,6 @@ public class VentanaConversorDeDivisas extends JFrame {
 
         pack();
 
-        // Agregar acción al botón "Convertir"
-        btnConvertir.addActionListener(e -> convertirDivisas());
 
         this.addWindowListener(new WindowAdapter() {
             @Override
@@ -132,7 +194,14 @@ public class VentanaConversorDeDivisas extends JFrame {
                 ventanaInicial.setVisible(true);
             }
         });
+
+        //Establece una conversion por defecto al abrir la ventana
+        convertirDivisas();
     }
+
+    //Variables para la funcion convertirDivisas();
+    String monedaOrigen;
+    String monedaDestino;
 
     private void convertirDivisas() {
         try {
@@ -141,9 +210,18 @@ public class VentanaConversorDeDivisas extends JFrame {
 
             // Obtener la moneda de origen y destino seleccionadas
             DivisasEnEspanol divisasEnEspanol = new DivisasEnEspanol();
+            DivisasEnIngles divisasEnIngles = new DivisasEnIngles();
 
-            String monedaOrigen = divisasEnEspanol.diccionario.get(cbMonedaOrigen.getSelectedItem());
-            String monedaDestino = divisasEnEspanol.diccionario.get(cbMonedaDestino.getSelectedItem());
+            if (cbCambioDeidioma.getSelectedItem() == "Español"){
+                monedaOrigen = divisasEnEspanol.diccionario.get(cbMonedaOrigen.getSelectedItem());
+                monedaDestino = divisasEnEspanol.diccionario.get(cbMonedaDestino.getSelectedItem());
+            } else if (cbCambioDeidioma.getSelectedItem() == "Ingles") {
+                monedaOrigen = divisasEnIngles.diccionario.get(cbMonedaOrigen.getSelectedItem());
+                monedaDestino = divisasEnIngles.diccionario.get(cbMonedaDestino.getSelectedItem());
+            } else {
+                System.out.println("error");
+            }
+
 
             //Conversion
             ObtenerDivisas obtenerDivisas = new ObtenerDivisas();

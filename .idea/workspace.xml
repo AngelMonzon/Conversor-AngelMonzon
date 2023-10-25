@@ -10,22 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d450817-ddb5-4892-a5ed-5a601debdda2" name="Lista de cambios predeterminada" comment="Lista de cambios predeterminada">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Conversor_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DivisasEnEspanol.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/img/engranajes.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DivisasEnIngles.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/TestLOpcionIdioma.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Conversor_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Conversor_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Colores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Colores.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ConversionResultado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ConversionUnidadesResultado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ObtenerDivisas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ObtenerDivisas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ObtenerTipoConversiones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ObtenerTipoConverUnid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OperacionConversorDeUnidades.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OperacionConversorDeUnidades.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PruebaPunto.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/VentanaConversorDeDivisas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VentanaConversorDeDivisas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/VentanaConversorDeUnidades.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VentanaConversorDeUnidades.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/VentanaElegirAreaDeConversion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VentanaElegirAreaDeConversion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/VentanaInicial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VentanaInicial.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +35,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
     <option name="sortByName" value="true" />
   </component>
   <component name="ProjectId" id="2SWFHzDFODvKBywZVXqoLlisnwW" />
@@ -65,14 +54,15 @@
     &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
     &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;20&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/new-hp/IdeaProjects/Ejercicios/Conversor/src/img/divisa.png&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/new-hp/IdeaProjects/Ejercicios/Conversor/src/img&quot;,
     &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/new-hp/IdeaProjects/Ejercicios/Conversor/src/Main.java&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.1150748&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.javacompiler&quot;
   }
 }</component>
@@ -84,6 +74,47 @@
       <recent name="C:\Users\new-hp\IdeaProjects\Ejercicios\Conversor\lib" />
     </key>
   </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Conversor" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Conversor.jar" type="JarApplication">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/Conversor_jar/Conversor.jar" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unnamed" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list />
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="JAR Application.Conversor.jar" />
+      <item itemvalue="Maven.Unnamed" />
+    </list>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="애플리케이션 수준" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Tarea por defecto">
@@ -93,6 +124,14 @@
       <option name="presentableId" value="Default" />
       <updated>1689254345468</updated>
     </task>
+    <task id="LOCAL-00001" summary="Lista de cambios predeterminada">
+      <created>1698119234815</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1698119234815</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -108,6 +147,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Lista de cambios predeterminada" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lista de cambios predeterminada" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

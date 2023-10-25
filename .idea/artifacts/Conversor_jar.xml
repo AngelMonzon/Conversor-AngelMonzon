@@ -3,6 +3,7 @@
     <output-path>$PROJECT_DIR$/out/artifacts/Conversor_jar</output-path>
     <root id="archive" name="Conversor.jar">
       <element id="module-output" name="Conversor" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/gson-2.10.1.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/okio-3.4.0.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/okio-jvm-3.4.0.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/kotlin-stdlib-jdk8-1.8.0.jar" path-in-jar="/" />
@@ -10,7 +11,6 @@
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/annotations-13.0.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/kotlin-stdlib-jdk7-1.8.0.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/kotlin-stdlib-common-1.8.0.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/lib/gson-2.10.1.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/okhttp-4.11.0.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/okio-3.2.0.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/okio-jvm-3.2.0.jar" path-in-jar="/" />
@@ -18,8 +18,10 @@
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/kotlin-stdlib-common-1.6.20.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/kotlin-stdlib-jdk8-1.6.20.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/kotlin-stdlib-jdk7-1.6.20.jar" path-in-jar="/" />
-      <element id="module-source" name="Conversor" />
-      <element id="file-copy" path="$PROJECT_DIR$/src/img/divisa.png" />
+      <element id="directory" name="img">
+        <element id="module-source" name="Conversor" />
+        <element id="dir-copy" path="$PROJECT_DIR$/src/img" />
+      </element>
     </root>
   </artifact>
 </component>
