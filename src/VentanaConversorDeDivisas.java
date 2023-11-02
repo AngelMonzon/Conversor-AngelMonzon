@@ -3,6 +3,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.text.AbstractDocument;
@@ -43,39 +44,6 @@ public class VentanaConversorDeDivisas extends JFrame {
         // Creación de los componentes
         Dimension tamanoComponentes = new Dimension(150,25);
 
-        JLabel lblMonto = new JLabel("Monto:");
-        lblMonto.setForeground(Colores.COLOR_DE_LETRAS);
-
-        JLabel lblMonedaOrigen = new JLabel("Moneda Origen:");
-        lblMonedaOrigen.setForeground(Colores.COLOR_DE_LETRAS);
-
-        JLabel lblMonedaDestino = new JLabel("Moneda Destino:");
-        lblMonedaDestino.setForeground(Colores.COLOR_DE_LETRAS);
-
-        //JLabel donde se mostrara el resultado
-        lblResultado = new JLabel("0.00");
-        lblResultado.setForeground(Colores.COLOR_DE_LETRAS);
-        lblResultado.setPreferredSize(tamanoComponentes);
-        lblResultado.setHorizontalAlignment(SwingConstants.RIGHT);
-
-        //JtextField para ingresar monto a convertir
-        txtMonto =  new JTextField("1",10 );
-        txtMonto.setBackground(Colores.COLOR_DE_JTextField);
-        txtMonto.setForeground(Colores.COLOR_DE_LETRA_JTextField);
-        txtMonto.setPreferredSize(tamanoComponentes);
-        txtMonto.setHorizontalAlignment(SwingConstants.RIGHT);
-        Document document = txtMonto.getDocument();
-        ((AbstractDocument) document).setDocumentFilter(FiltroDeCaracteresNumericos.FILTRO_NUMERICO);
-        final String[] previousText = {txtMonto.getText()};
-        txtMonto.getDocument().addDocumentListener(new VerificarPuntoDecimal(previousText));
-        txtMonto.addKeyListener(new KeyAdapter() {
-            @Override
-            public void keyReleased(KeyEvent e) {
-                previousText[0] = txtMonto.getText();
-            }
-        });
-        txtMonto.addActionListener(e -> convertirDivisas());
-
         //ComboBox para el cambio de idioma
         String[] opciones = {"Español", "Ingles"};
         cbCambioDeidioma = new JComboBox<>(opciones);
@@ -100,6 +68,41 @@ public class VentanaConversorDeDivisas extends JFrame {
                 }
             }
         });
+
+        //Verificar si hay conexion y mostrarla al usuario
+        VerificarConexion verificarConexion = new VerificarConexion();
+        JLabel lblConexion = new JLabel(verificarConexion.estadoConeccion);
+        lblConexion.setForeground(Colores.COLOR_DE_LETRAS);
+
+        JLabel lblMonto = new JLabel("Monto:");
+        lblMonto.setForeground(Colores.COLOR_DE_LETRAS);
+
+        JLabel lblMonedaOrigen = new JLabel("Moneda Origen:");
+        lblMonedaOrigen.setForeground(Colores.COLOR_DE_LETRAS);
+
+        JLabel lblMonedaDestino = new JLabel("Moneda Destino:");
+        lblMonedaDestino.setForeground(Colores.COLOR_DE_LETRAS);
+
+
+        //JtextField para ingresar monto a convertir
+        txtMonto =  new JTextField("1",10 );
+        txtMonto.setBackground(Colores.COLOR_DE_JTextField);
+        txtMonto.setForeground(Colores.COLOR_DE_LETRA_JTextField);
+        txtMonto.setPreferredSize(tamanoComponentes);
+        txtMonto.setHorizontalAlignment(SwingConstants.RIGHT);
+        Document document = txtMonto.getDocument();
+        ((AbstractDocument) document).setDocumentFilter(FiltroDeCaracteresNumericos.FILTRO_NUMERICO);
+        final String[] previousText = {txtMonto.getText()};
+        txtMonto.getDocument().addDocumentListener(new VerificarPuntoDecimal(previousText));
+        txtMonto.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyReleased(KeyEvent e) {
+                previousText[0] = txtMonto.getText();
+            }
+        });
+        txtMonto.addActionListener(e -> convertirDivisas());
+
+
 
         //Boton para alternar las monedas
         ImageIcon iconoAlternar = new ImageIcon("src/img/sincronizacion.png");
@@ -132,6 +135,12 @@ public class VentanaConversorDeDivisas extends JFrame {
         // Agregar acción al botón "Convertir"
         btnConvertir.addActionListener(e -> convertirDivisas());
 
+        //JLabel donde se mostrara el resultado
+        lblResultado = new JLabel("0.00");
+        lblResultado.setForeground(Colores.COLOR_DE_LETRAS);
+        lblResultado.setPreferredSize(tamanoComponentes);
+        lblResultado.setHorizontalAlignment(SwingConstants.RIGHT);
+
         // Configuración del panel
         JPanel panel = new JPanel();
         panel.setLayout(new GridBagLayout());
@@ -143,6 +152,10 @@ public class VentanaConversorDeDivisas extends JFrame {
         constraints.gridx = 0;
         constraints.gridy = 0;
         panel.add(cbCambioDeidioma, constraints);
+
+        constraints.gridx = 1;
+        constraints.gridy = 0;
+        panel.add(lblConexion, constraints);
 
         constraints.gridx = 0;
         constraints.gridy = 1;
@@ -229,8 +242,12 @@ public class VentanaConversorDeDivisas extends JFrame {
 
             // Mostrar el resultado en la etiqueta
             lblResultado.setText(resultado + " " + monedaDestino);
-        } catch (NumberFormatException | IOException ex) {
+        } catch (NumberFormatException e) {
             lblResultado.setText("Error: Ingrese un monto válido");
+        } catch (IOException ex){
+            lblResultado.setText("Error: Error en red");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
     }
 }
