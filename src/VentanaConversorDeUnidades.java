@@ -24,6 +24,12 @@ public class VentanaConversorDeUnidades extends JFrame {
         setIconImage(icono.getImage());
 
         // Creación de los componentes
+
+        //Anadir menu
+
+        MenuVentanas.createMenu(this);
+        MenuVentanas.VENTANA_ABIERTA = 1;
+
         JLabel lblValor = new JLabel("Valor:");
         lblValor.setForeground(Colores.COLOR_DE_LETRAS);
 
@@ -70,20 +76,50 @@ public class VentanaConversorDeUnidades extends JFrame {
 
         // Configuración del panel
         JPanel panel = new JPanel();
-        panel.setLayout(new GridLayout(4, 2));
+        panel.setLayout(new GridBagLayout());
         panel.setBackground(Colores.COLOR_DE_FONDO);
 
-        panel.add(lblValor);
-        panel.add(txtValor);
-        panel.add(lblMedidaOrigen);
-        panel.add(comboBoxOrigen);
-        panel.add(lblMedidaDestino);
-        panel.add(comboBoxDestino);
-        panel.add(btnConvertir);
-        panel.add(lblResultado);
+        GridBagConstraints constraints = new GridBagConstraints();
+        constraints.insets = new Insets(15, 15, 15, 15);
+
+        constraints.gridx = 0;
+        constraints.gridy = 1;
+        panel.add(lblValor, constraints);
+
+        constraints.gridx = 1;
+        constraints.gridy = 1;
+        panel.add(txtValor, constraints);
+
+        constraints.gridx = 0;
+        constraints.gridy = 2;
+        panel.add(lblMedidaOrigen, constraints);
+
+        constraints.gridx = 1;
+        constraints.gridy = 2;
+        panel.add(comboBoxOrigen, constraints);
+
+        constraints.gridx = 0;
+        constraints.gridy = 3;
+        panel.add(lblMedidaDestino, constraints);
+
+        constraints.gridx = 1;
+        constraints.gridy = 3;
+        panel.add(comboBoxDestino, constraints);
+
+
+        constraints.gridx = 0;
+        constraints.gridy = 4;
+        panel.add(btnConvertir, constraints);
+
+        constraints.gridx = 1;
+        constraints.gridy = 4;
+        panel.add(lblResultado, constraints);
+
 
         // Agregar el panel a la ventana
         add(panel);
+
+        pack();
 
         // Agregar acción al botón "Convertir"
         btnConvertir.addActionListener(new ActionListener() {

@@ -42,6 +42,11 @@ public class VentanaConversorDeDivisas extends JFrame {
 
 
         // Creación de los componentes
+
+        //Anadir menu
+        MenuVentanas.createMenu(this);
+        MenuVentanas.VENTANA_ABIERTA = 0;
+
         Dimension tamanoComponentes = new Dimension(150,25);
 
         //ComboBox para el cambio de idioma

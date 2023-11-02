@@ -10,23 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d450817-ddb5-4892-a5ed-5a601debdda2" name="Lista de cambios predeterminada" comment="Boton para alterar entre monedase idioma ingles">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/new_hp.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/slf4j_nop.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/xerial_sqlite_jdbc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/aopalliance-1.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/guice-2.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/slf4j-api-1.7.36.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/slf4j-api-2.0.9.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/slf4j-nop-2.0.9.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/sqlite-jdbc-3.43.2.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ObtenerDatosDeApi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/VerificarConexion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MenuVentanas.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Conversor.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Conversor.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ObtenerDivisas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ObtenerDivisas.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/VentanaConversorDeDivisas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VentanaConversorDeDivisas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/VentanaConversorDeUnidades.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VentanaConversorDeUnidades.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
